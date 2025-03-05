@@ -2,27 +2,49 @@
   <html:link rel="localization" href="__addonRef__-preferences.ftl" />
 </linkset>
 <groupbox
-  onload="Zotero.__addonInstance__.hooks.onPrefsEvent('load', { window });"
+  onload="(() => {
+    Zotero.__addonInstance__.hooks.onPrefsEvent('load', { window });
+    const verified = Zotero.Prefs.get('extensions.zotero.zot2anythingllm.AnythingLLM.verified', true);
+    const statusElement = document.getElementById('zotero-prefpane-zot2anythingllm-verify-status');
+    if (statusElement) {
+      statusElement.textContent = verified ? '✅' : '❌';
+      statusElement.setAttribute('data-verified', verified ? 'true' : 'false');
+    }
+  })()"
 >
   <label><html:h2 data-l10n-id="pref-title"></html:h2></label>
-  <checkbox
-    id="zotero-prefpane-__addonRef__-enable"
-    preference="enable"
-    data-l10n-id="pref-enable"
-  />
   <hbox>
     <html:label
-      for="zotero-prefpane-__addonRef__-input"
-      data-l10n-id="pref-input"
+      for="zotero-prefpane-__addonRef__-AnythingLLMURL"
+      data-l10n-id="pref-input-URL"
     ></html:label>
     <html:input
       type="text"
-      id="zotero-prefpane-__addonRef__-input"
-      preference="input"
+      id="zotero-prefpane-__addonRef__-AnythingLLMURL"
+      preference="AnythingLLM.url"
     ></html:input>
   </hbox>
-  <hbox class="virtualized-table-container" flex="1" height="300px">
-    <html:div id="__addonRef__-table-container" />
+  <hbox>
+    <html:label
+      for="zotero-prefpane-__addonRef__-AnythingLLMAPITOKEN"
+      data-l10n-id="pref-input-APITOKEN"
+    ></html:label>
+    <html:input
+      type="text"
+      id="zotero-prefpane-__addonRef__-AnythingLLMAPITOKEN"
+      preference="AnythingLLM.apitoken"
+    ></html:input>
+    <html:button
+      id="zotero-prefpane-__addonRef__-verify"
+      data-l10n-id="pref-verify-button"
+      onclick="Zotero.__addonInstance__.hooks.onPrefsEvent('verify', { window });"
+    ></html:button>
+    <html:span
+      id="zotero-prefpane-__addonRef__-verify-status"
+      style="margin-left: 5px; font-size: 16px"
+      data-verified="false"
+      >❌</html:span
+    >
   </hbox>
 </groupbox>
 <vbox>

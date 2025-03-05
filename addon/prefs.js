@@ -1,3 +1,4 @@
 /* eslint-disable no-undef */
-pref("enable", true);
-pref("input", "This is input");
+pref("AnythingLLM.url", "http://localhost:3001/");
+pref("AnythingLLM.apitoken", "");
+pref("AnythingLLM.verified", false);

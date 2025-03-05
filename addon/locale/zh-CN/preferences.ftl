@@ -1,5 +1,7 @@
-pref-title = 插件模板设置示例
-pref-enable =
-    .label = 开启
-pref-input = 输入
+pref-title = AnythingLLM 配置
+pref-input-URL = URL
+pref-input-APITOKEN = API Token
+pref-verify-button = 验证连接
+pref-verify-success = 连接成功
+pref-verify-error = 连接失败：{$error}
 pref-help = { $name } Build { $version } { $time }

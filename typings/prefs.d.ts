@@ -7,8 +7,9 @@
 declare namespace _ZoteroTypes {
   interface Prefs {
     PluginPrefsMap: {
-      "enable": boolean;
-      "input": string;
+      "AnythingLLM.url": string;
+      "AnythingLLM.apitoken": string;
+      "AnythingLLM.verified": boolean;
     };
   }
 }
