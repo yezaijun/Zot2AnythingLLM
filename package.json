@@ -1,24 +1,24 @@
 {
-  "name": "zotero-plugin-template",
+  "name": "zot2anythingllm",
   "type": "module",
-  "version": "3.0.4",
-  "description": "Zotero Plugin Template",
+  "version": "0.0.2",
+  "description": "Zotero Plugin for AnythingLLM",
   "config": {
-    "addonName": "Zotero Plugin Template",
-    "addonID": "addontemplate@euclpts.com",
-    "addonRef": "addontemplate",
-    "addonInstance": "AddonTemplate",
-    "prefsPrefix": "extensions.zotero.addontemplate"
+    "addonName": "Zot2AnythingLLM",
+    "addonID": "Zot2AnythingLLM@yeaijun.githun.io",
+    "addonRef": "zot2anythingllm",
+    "addonInstance": "zot2anythingllm",
+    "prefsPrefix": "extensions.zotero.zot2anythingllm"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/windingwind/zotero-plugin-template.git"
+    "url": "git+https://github.com/yezaijun/Zot2AnythingLLM.git"
   },
-  "author": "windingwind",
+  "author": "yezaijun",
   "bugs": {
-    "url": "https://github.com/windingwind/zotero-plugin-template/issues"
+    "url": "https://github.com/yezaijun/Zot2AnythingLLM/issues"
   },
-  "homepage": "https://github.com/windingwind/zotero-plugin-template#readme",
+  "homepage": "https://github.com/yezaijun/Zot2AnythingLLM#readme",
   "license": "AGPL-3.0-or-later",
   "scripts": {
     "start": "zotero-plugin serve",
@@ -30,6 +30,7 @@
     "update-deps": "npm update --save"
   },
   "dependencies": {
+    "formdata-polyfill": "^4.0.10",
     "zotero-plugin-toolkit": "^4.1.1"
   },
   "devDependencies": {
